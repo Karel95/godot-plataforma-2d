@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bp7ijgvhu40rg"]
+[gd_scene load_steps=34 format=3 uid="uid://bp7ijgvhu40rg"]
 
 [ext_resource type="Texture2D" uid="uid://k44xh30xhapm" path="res://assets/Rocky Roads/Tilesets/tileset_forest.png" id="1_kf3bb"]
 [ext_resource type="Script" path="res://scripts/Mundo.gd" id="1_v8c4e"]
@@ -12,10 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://bagaoxgrvhvbv" path="res://assets/Rocky Roads/Objects/heart.png" id="12_7qhbx"]
 [ext_resource type="Texture2D" uid="uid://dc07ca7y74qd3" path="res://assets/Rocky Roads/Objects/coin_gold.png" id="12_8sotq"]
 [ext_resource type="PackedScene" uid="uid://ctp1appcpr3ah" path="res://scenes/Coin.tscn" id="12_ibf4g"]
+[ext_resource type="Script" path="res://scripts/Heart1.gd" id="13_rnf1t"]
 [ext_resource type="Script" path="res://scripts/UI.gd" id="13_sr31c"]
 [ext_resource type="Script" path="res://scripts/Spikes.gd" id="14_gvg3n"]
 [ext_resource type="PackedScene" uid="uid://bn0abj8a74afu" path="res://scenes/Pause.tscn" id="14_pa4bb"]
+[ext_resource type="Script" path="res://scripts/Heart2.gd" id="14_u2smx"]
 [ext_resource type="Texture2D" uid="uid://ilou0sb5k1jd" path="res://assets/Rocky Roads/Enemies/spikes.png" id="15_4t26v"]
+[ext_resource type="Script" path="res://scripts/Heart3.gd" id="15_4u80g"]
 [ext_resource type="Texture2D" uid="uid://cc4hx0vog5m21" path="res://assets/Rocky Roads/Objects/apple.png" id="16_2cx7e"]
 [ext_resource type="PackedScene" uid="uid://b58f7o5t5osj2" path="res://scenes/Saw.tscn" id="16_basev"]
 [ext_resource type="PackedScene" uid="uid://6pq232blc2x0" path="res://scenes/Enemy.tscn" id="17_qab2u"]
@@ -582,18 +585,21 @@ position = Vector2(42, 99)
 scale = Vector2(3.51046, 3.60174)
 texture = ExtResource("12_7qhbx")
 hframes = 3
+script = ExtResource("13_rnf1t")
 
 [node name="Heart2" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(86, 100)
 scale = Vector2(3.51046, 3.60174)
 texture = ExtResource("12_7qhbx")
 hframes = 3
+script = ExtResource("14_u2smx")
 
 [node name="Heart3" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(130, 101)
 scale = Vector2(3.51046, 3.60174)
 texture = ExtResource("12_7qhbx")
 hframes = 3
+script = ExtResource("15_4u80g")
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("14_pa4bb")]
 process_mode = 3

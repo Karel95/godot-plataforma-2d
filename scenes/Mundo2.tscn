@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bgb1kblv3qt11"]
+[gd_scene load_steps=25 format=3 uid="uid://bgb1kblv3qt11"]
 
 [ext_resource type="Script" path="res://scripts/Mundo2.gd" id="1_in0va"]
 [ext_resource type="Texture2D" uid="uid://bg6vug2bh5tyl" path="res://assets/Rocky Roads/Deco/water_a_8frames.png" id="1_whxbq"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://scripts/UI2.gd" id="14_yu5yf"]
 [ext_resource type="Texture2D" uid="uid://cc4hx0vog5m21" path="res://assets/Rocky Roads/Objects/apple.png" id="15_lgygo"]
 [ext_resource type="Script" path="res://scripts/Spikes.gd" id="15_rfr1u"]
+[ext_resource type="PackedScene" uid="uid://6pq232blc2x0" path="res://scenes/Enemy.tscn" id="16_fdcpk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fi4vu"]
 texture = ExtResource("5_sdm3m")
@@ -309,7 +310,7 @@ texture = ExtResource("10_rnrnn")
 0:1/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_3qv03"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 5
 sources/0 = SubResource("TileSetAtlasSource_fi4vu")
 sources/1 = SubResource("TileSetAtlasSource_4mlei")
 sources/2 = SubResource("TileSetAtlasSource_lsmtq")
@@ -347,6 +348,7 @@ layer_1/tile_data = PackedInt32Array()
 
 [node name="Player" parent="." instance=ExtResource("11_sfid5")]
 position = Vector2(10, 403)
+collision_layer = 5
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(93.7969, -10.3928)
@@ -435,6 +437,9 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(62.3365, 0)
 shape = SubResource("RectangleShape2D_0uwyc")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("16_fdcpk")]
+position = Vector2(189.251, 395.085)
 
 [connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

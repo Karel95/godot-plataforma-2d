@@ -7,6 +7,9 @@ const gravity = 15
 var axis: Vector2
 var score: int
 
+var motion = Vector2()
+var lifes = 3
+
 @onready var sprite = $Sprite2D
 @onready var animationPlayer = $AnimationPlayer
 
@@ -37,5 +40,35 @@ func moveCtrl()-> void:
 	velocity.x = get_axis().x * speed
 	#velocity.y = get_axis().y * -speed
 
+func _loseLife(enemy2Position):
+	var enemy2PosX = enemy2Position
+	#print(enemy2PosX)
+	#print(position.x)
+	
+	if position.x < enemy2PosX:
+		velocity = Vector2(-500, -300)
+		
+	elif position.x > enemy2PosX:
+		velocity = Vector2(500, -300)
+		
+		#PROBLEMA: No rebota en X.
+	
+	lifes = lifes - 1
+	print("Vida actual: " + str(lifes))
+	
+	if lifes <= 0:
+		get_tree().reload_current_scene()
+		Global.coins = 0
+	
+	elif lifes == 2:
+		$"../CanvasLayer/Heart3".visible = !visible
+	
+	elif lifes == 1:
+		$"../CanvasLayer/Heart2".visible = !visible
+	
+	#Global.handleHearts(lifes)
+	
+	print("Te han herido")
 	
 	
+
