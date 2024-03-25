@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://qo3ho2oktq54"]
+[gd_scene load_steps=4 format=3 uid="uid://qo3ho2oktq54"]
 
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_lxdjf"]
 [ext_resource type="Texture2D" uid="uid://c5gd0bvcgi7ub" path="res://assets/menu_fondo.jpg" id="2_xdn5v"]
+[ext_resource type="AudioStream" uid="uid://kwq7qa0v5wup" path="res://musicAndSound/music/test-01.ogg" id="3_mxji2"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -40,5 +41,9 @@ text = "Start Game"
 layout_mode = 2
 text = "Quit"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mxji2")
+
 [connection signal="pressed" from="VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

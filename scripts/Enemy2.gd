@@ -19,9 +19,11 @@ func _process(_delta):
 	velocity.y += gravity
 	
 	if (moving_left):
+		animationEnemy2.play("Walk")
 		velocity.x = -speed
 		move_and_slide()
 	else:
+		animationEnemy2.play("Walk")
 		velocity.x = speed
 		move_and_slide()
 		

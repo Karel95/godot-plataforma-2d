@@ -5,6 +5,7 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("pause"):
+		$AudioStreamPlayer.play()
 		print("Pausado")
 		visible = not get_tree().paused
 		get_tree().paused = not get_tree().paused

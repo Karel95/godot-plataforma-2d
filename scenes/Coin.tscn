@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctp1appcpr3ah"]
+[gd_scene load_steps=8 format=3 uid="uid://ctp1appcpr3ah"]
 
 [ext_resource type="Texture2D" uid="uid://dc07ca7y74qd3" path="res://assets/Rocky Roads/Objects/coin_gold.png" id="1_4aoet"]
 [ext_resource type="Script" path="res://scripts/Coin.gd" id="1_kplk7"]
+[ext_resource type="AudioStream" uid="uid://udj5lb2jyh5k" path="res://musicAndSound/sounds/toggle_002.ogg" id="3_u65nu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y16xe"]
 radius = 8.0
@@ -62,5 +63,8 @@ libraries = {
 "": SubResource("AnimationLibrary_378bp")
 }
 autoplay = "Coin"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Area2D"]
+stream = ExtResource("3_u65nu")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

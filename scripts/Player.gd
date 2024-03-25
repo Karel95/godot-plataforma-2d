@@ -21,6 +21,7 @@ func get_axis()-> Vector2:
 func _physics_process(_delta):
 	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
 		velocity.y = jump
+		$ASP2DPlayerJump.play()
 	if not is_on_floor():
 		velocity.y += gravity
 	
@@ -45,6 +46,8 @@ func _loseLife(enemy2Position):
 	#print(enemy2PosX)
 	#print(position.x)
 	
+	$ASP2DPlayerGetDamaged.play()
+	
 	if position.x < enemy2PosX:
 		velocity = Vector2(-500, -300)
 		
@@ -57,6 +60,10 @@ func _loseLife(enemy2Position):
 	print("Vida actual: " + str(lifes))
 	
 	if lifes <= 0:
+		$ASP2DPlayerDead.play()
+		
+		await get_tree().create_timer(0.1).timeout
+		
 		get_tree().reload_current_scene()
 		Global.coins = 0
 	

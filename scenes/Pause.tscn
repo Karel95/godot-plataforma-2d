@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bn0abj8a74afu"]
+[gd_scene load_steps=3 format=3 uid="uid://bn0abj8a74afu"]
 
 [ext_resource type="Script" path="res://scripts/Pause.gd" id="1_5eu5j"]
+[ext_resource type="AudioStream" uid="uid://4g8iyj80d11r" path="res://musicAndSound/sounds/toggle_001.ogg" id="2_vckd8"]
 
 [node name="Pause" type="Control"]
 layout_mode = 3
@@ -36,3 +37,6 @@ grow_vertical = 2
 text = "              PAUSED
 
  PRESS P TO CONTINUE"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vckd8")

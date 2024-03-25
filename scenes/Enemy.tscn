@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://6pq232blc2x0"]
+[gd_scene load_steps=10 format=3 uid="uid://6pq232blc2x0"]
 
 [ext_resource type="Script" path="res://scripts/Enemy.gd" id="1_lagsb"]
 [ext_resource type="Texture2D" uid="uid://27hr4qej6ctq" path="res://assets/Rocky Roads/Enemies/slime_red.png" id="2_qnptd"]
+[ext_resource type="AudioStream" uid="uid://n1s6vr1yk8l7" path="res://musicAndSound/sounds/error_008.ogg" id="3_3jb43"]
 
 [sub_resource type="Animation" id="Animation_5m6qx"]
 resource_name = "Idle"
@@ -93,5 +94,8 @@ shape = SubResource("RectangleShape2D_qkkxt")
 position = Vector2(-23, -1)
 target_position = Vector2(0, 25)
 collision_mask = 4
+
+[node name="ASP2DPlayerDead" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3jb43")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
