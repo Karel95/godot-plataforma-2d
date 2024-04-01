@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://b58f7o5t5osj2" path="res://scenes/Saw.tscn" id="16_basev"]
 [ext_resource type="PackedScene" uid="uid://6pq232blc2x0" path="res://scenes/Enemy.tscn" id="17_qab2u"]
 [ext_resource type="PackedScene" uid="uid://2ngw2uktrq7p" path="res://scenes/Enemy2.tscn" id="18_n7tag"]
-[ext_resource type="AudioStream" uid="uid://diumywamx5pft" path="res://musicAndSound/music/POL-test-your-skills-short.wav" id="21_a42ov"]
+[ext_resource type="AudioStream" uid="uid://16qp0q5tyndd" path="res://musicAndSound/music/project-01.ogg" id="21_6t3pn"]
 [ext_resource type="Script" path="res://scripts/ASPMundo1.gd" id="22_klo35"]
 [ext_resource type="AudioStream" uid="uid://n1s6vr1yk8l7" path="res://musicAndSound/sounds/error_008.ogg" id="23_vppap"]
 
@@ -666,8 +666,7 @@ position = Vector2(307.69, 301.448)
 position = Vector2(357.317, 301.448)
 
 [node name="ASPMundo1" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("21_a42ov")
-volume_db = -20.0
+stream = ExtResource("21_6t3pn")
 autoplay = true
 script = ExtResource("22_klo35")
 
@@ -676,7 +675,7 @@ position = Vector2(-164.916, 232.801)
 scale = Vector2(0.763499, 0.596926)
 stream = ExtResource("23_vppap")
 
-[connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="cambioDeEscena"]
+[connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="body_entered" from="SpikesArea2D" to="SpikesArea2D" method="_on_body_entered"]
 [connection signal="finished" from="ASPMundo1" to="ASPMundo1" method="_on_finished"]

@@ -30,7 +30,7 @@ func _physics_process(_delta):
 	var direction = get_axis()
 	if direction:
 		animationPlayer.play("Walk")
-		sprite.flip_h = get_axis().x > 0
+		sprite.flip_h = get_axis().x < 0
 	else:
 		animationPlayer.play("Idle")
 	

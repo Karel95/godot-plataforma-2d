@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://qn57dengb5r"]
 
-[ext_resource type="Texture2D" uid="uid://dhrmdl5dqku74" path="res://assets/Rocky Roads/Enemies/slime_blue.png" id="1_66apc"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_u852w"]
+[ext_resource type="Texture2D" uid="uid://b70k036n64amb" path="res://assets/My Assets/project-02.32x32_manWalk-01.png" id="2_c717g"]
 [ext_resource type="AudioStream" uid="uid://m47tur4dka4b" path="res://musicAndSound/sounds/drop_004.ogg" id="3_fxvaa"]
 [ext_resource type="AudioStream" uid="uid://d1ge8prcewh2c" path="res://musicAndSound/sounds/confirmation_001.ogg" id="4_23c4m"]
 [ext_resource type="AudioStream" uid="uid://n1s6vr1yk8l7" path="res://musicAndSound/sounds/error_008.ogg" id="5_ixbmk"]
@@ -77,9 +77,10 @@ position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_ab2t5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_66apc")
-hframes = 5
-vframes = 2
+position = Vector2(1.19209e-07, -0.750001)
+scale = Vector2(0.6875, 0.703125)
+texture = ExtResource("2_c717g")
+vframes = 4
 
 [node name="ASP2DPlayerJump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_fxvaa")
